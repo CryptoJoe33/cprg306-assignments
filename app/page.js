@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import StudentInfo from 'app/components/StudentInfo'
 
 export default function Home() {
   return (
