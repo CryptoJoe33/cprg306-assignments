@@ -1,4 +1,4 @@
-import Items from './items';
+import Items from './item';
 
 export default function ItemList(){
     // Renders Items component
