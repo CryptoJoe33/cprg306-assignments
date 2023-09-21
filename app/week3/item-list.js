@@ -75,4 +75,21 @@ export default function ItemList(){
         quantity: 4,
         category: "household",
       };
+
+      return (
+        <ul>
+            <li><Items name={item1.name} quantity={item1.quantity} category={item1.category}/></li>
+            <li><Items name={item2.name} quantity={item2.quantity} category={item2.category}/></li>
+            <li><Items name={item3.name} quantity={item3.quantity} category={item3.category}/></li>
+            <li><Items name={item4.name} quantity={item4.quantity} category={item4.category}/></li>
+            <li><Items name={item5.name} quantity={item5.quantity} category={item5.category}/></li>
+            <li><Items name={item6.name} quantity={item6.quantity} category={item6.category}/></li>
+            <li><Items name={item7.name} quantity={item7.quantity} category={item7.category}/></li>
+            <li><Items name={item8.name} quantity={item8.quantity} category={item8.category}/></li>
+            <li><Items name={item9.name} quantity={item9.quantity} category={item9.category}/></li>
+            <li><Items name={item10.name} quantity={item10.quantity} category={item10.category}/></li>
+            <li><Items name={item11.name} quantity={item11.quantity} category={item11.category}/></li>
+            <li><Items name={item12.name} quantity={item12.quantity} category={item12.category}/></li>
+        </ul>
+      );
 }
