@@ -1,6 +1,6 @@
 "use client"
-
 import { useState } from "react"
+import Item from "./item.js"
 
 export default function NewItem() {
     const [name, setName] = useState("");

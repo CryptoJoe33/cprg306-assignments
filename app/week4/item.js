@@ -4,5 +4,5 @@ export default function Item({name, quantity, category}){
             <li>Purchase: {name}</li>
             <li>Amount: {quantity} from category: {category}</li>
         </ul>
-    )
+    );
 }

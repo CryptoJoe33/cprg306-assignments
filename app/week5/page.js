@@ -1,5 +1,5 @@
 // import Items from "./items.json"
-import ItemList from "./item-list"
+import ItemList from "./item-list.js"
 
 export default function Page(){
     return (
