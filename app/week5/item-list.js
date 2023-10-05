@@ -21,8 +21,8 @@ export default function Sorting(){
 
     return (
         <div>
-            <button style = {{ backgroundColor: sortBy === 'name' ? "blue" : "white"  }} onClick={() => setSortBy("name")}>Sort by Name</button>
-            <button style = {{ backgroundColor: sortBy === 'category' ? "blue" : "white"  }} onClick={() => setSortBy("category")}>Sort by Category</button>
+            <button onClick={() => setSortBy("name")} className = {` p-1 m-2 rounded-md ${sortBy === "name" ? "bg-green-500" : "bg-orange-700"}`} >Sort by Name</button>
+            <button onClick={() => setSortBy("category")} className = {` p-1 m-2 rounded-md ${sortBy === "category" ? "bg-green-500" : "bg-orange-700"}`} >Sort by Category</button>
 
             <ul>
                 {Item .map((item) => (
