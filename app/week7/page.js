@@ -11,8 +11,9 @@ export default function Page(){
     const [items, setItems] = useState(ItemsData);
     const [selectedItemName, setSelectedItemName] = useState(null);
 
-    function handleItemSelect(items){
-        setSelectedItemName(selectedItemName)
+    const handleItemSelect = (selectedItem) => {
+        const fullName = selectedItem.name.split(",")[0].trim().replace(/[^\w\s]/gi, "");
+        setSelectedItemName(fullName);
     }
 
     function handleAddItem(newItem){
@@ -23,10 +24,16 @@ export default function Page(){
 
     return (
         <main>
-            <h1>Shopping List</h1>
-            <NewItem onAddItem={handleAddItem}/>
-            <ItemList onItemSelect = {handleItemSelect} items = {items}/>
-            <MealIdeas ingredient = {selectedItemName}/>
+            <div className="flex justify-center w-full md:w-3/4 lg:w-2/3 gap-4">
+                <div className="bg-black opacity-90 p-6 rounded-md shadow-md w-full border border-gray-400">
+                    <NewItem onAddItem={handleAddItem} />
+                    <ItemList items={items} onItemSelect={handleItemSelect} />
+                </div>
+
+                <div className="bg-black p-6 rounded-md shadow-md w-full border border-gray-400">
+                    <MealIdeas ingredient={selectedItemName} />
+                </div>
+            </div>
         </main>
     );
 }
