@@ -1,20 +1,20 @@
 "use client";
 
 import { useState } from "react";
-import ItemList from "./item-list.js";
-import NewItem from "./new-item.js";
-import ItemsData from "./items.json";
-import MealIdeas from "./meal-ideas.js";
+import ItemList from "./item-list.js"
+import NewItem from "./new-item.js"
+import ItemsData from "./items.json"
+import MealIdeas from "./meal-ideas.js"
 
 export default function Page(){
 
     const [items, setItems] = useState(ItemsData);
-    const [selectedItemName, setSelectedItemName] = useState(null);
+    const [selectedItemName, setSelectedItemName] = useState([]);
 
     const handleItemSelect = (selectedItem) => {
-        const fullName = selectedItem.name.split(",")[0].trim().replace(/[^\w\s]/gi, "");
-        setSelectedItemName(fullName);
-    }
+        const cleanedName = selectedItem.name.split(',')[0].trim().replace(/[^\w\s]/gi, "");
+        setSelectedItemName(cleanedName);
+    };
 
     function handleAddItem(newItem){
         setItems((prevItems) => {
