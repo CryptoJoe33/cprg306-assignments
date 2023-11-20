@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useUserAuth } from "react";
+import { useState, useUserAuth, useEffect } from "react";
 import ItemList from "./item-list.js"
 import NewItem from "./new-item.js"
-import ItemsData from "./items.json"
+import {getItems, addItem} from ".._services/shopping-list-service.js"
 import MealIdeas from "./meal-ideas.js"
 
 export default function Page(){
@@ -18,10 +18,22 @@ export default function Page(){
     };
 
     function handleAddItem(newItem){
+        addItem(user.uid, newItem);
         setItems((prevItems) => {
             return [newItem, ...prevItems];
         });
     }
+
+    async function loadItems(){
+        const items = await getItems(user.uid);
+        setItems(items);
+    }
+
+    useEffect(() => {
+        if(user){
+            loadItems();
+        }
+    }, [user]);
 
     return (
         <main>
